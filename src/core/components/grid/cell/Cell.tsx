@@ -1,14 +1,13 @@
 import { Component, ComponentProps } from 'solid-js';
 
 interface CellProps extends ComponentProps<any> {
-  // add props here
+  value: string | number;
+  editMode?: boolean;
 }
 
 const Cell: Component<CellProps> = (props: CellProps) => {
   return (
-    <div>
-      <h2>Cell</h2>
-    </div>
+    <div class="cell">{ props.value }</div>
   )
 }
 

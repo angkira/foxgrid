@@ -1,18 +1,15 @@
-import { Component, createSignal } from 'solid-js';
+import { Component } from 'solid-js';
 import './App.scss';
-import Counter from './Counter';
+import Grid from './core/components/grid/Grid';
+import { Item, TestGridConfig } from './test/test.config';
+import { TestGridData } from './test/test.data';
 
 const App: Component = () => {
-  const [counter, setCounter] = createSignal(0);
-  setInterval(setCounter, 1000, (c: number) => c + 1);
-
   return (
-    <>
-      <div>
-        <h1 class="header">{counter()}</h1>
-      </div>
-      <Counter />
-    </>
+      <Grid<Item>
+        config={TestGridConfig}
+        data={TestGridData as any[]}
+      ></Grid>
   );
 };
 
