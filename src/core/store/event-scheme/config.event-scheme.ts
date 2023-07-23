@@ -1,14 +1,16 @@
 import { ConfigEvents } from '../events/config.events';
 import { createHandlers, ReducerFn } from 'foxstore';
-import { GridState } from '../grid.store';
 import { GridConfig } from '../../config/grid.config';
 
-const updateConfig: ReducerFn<GridState, GridConfig<Item>> = config => ({ config });
+const updateConfig = <Item>(config: GridConfig<Item>) => ({ config });
 
-export const ConfigEventScheme = {
+export const ConfigEventScheme = <Item>() => ({
   [ConfigEvents.ConfigUpdated]: createHandlers({
+    effects: [
+      [console.log]
+    ],
     reducers: [
-      [updateConfig],
+      [updateConfig<Item>],
     ]
   })(ConfigEvents.ConfigUpdated),
-}
+})
