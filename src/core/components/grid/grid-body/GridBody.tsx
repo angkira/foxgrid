@@ -1,4 +1,4 @@
-import { Component, ComponentProps, For } from 'solid-js';
+import { ComponentProps, For } from 'solid-js';
 import { GridConfig } from '../../../config/grid.config';
 import Row from '../row/Row';
 
@@ -7,13 +7,16 @@ interface GridBodyProps<ItemType> extends ComponentProps<any> {
   data: ItemType[];
 }
 
-const GridBody = <ItemType, >(props: GridBodyProps<ItemType>) => {
+const GridBody = <ItemType,>(props: GridBodyProps<ItemType>) => {
   return (
-    <For each={props.data}>
-      {
-        item => <Row config={props.config} item={item}></Row>
-      }
-    </For>
+    <tbody class="fx-grid__body">
+      <For each={props.data}>
+        {
+          item => <Row config={props.config} item={item}></Row>
+        }
+      </For>
+    </tbody>
+
   )
 }
 

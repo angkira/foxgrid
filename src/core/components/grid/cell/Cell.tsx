@@ -1,4 +1,5 @@
 import { Component, ComponentProps } from 'solid-js';
+import './Cell.scss'
 
 interface CellProps extends ComponentProps<any> {
   value: string | number;
@@ -7,7 +8,7 @@ interface CellProps extends ComponentProps<any> {
 
 const Cell: Component<CellProps> = (props: CellProps) => {
   return (
-    <div class="cell">{ props.value }</div>
+    <td class="fx-grid__cell">{ props.value }</td>
   )
 }
 
