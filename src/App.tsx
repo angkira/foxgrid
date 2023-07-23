@@ -8,7 +8,7 @@ const App: Component = () => {
   return (
       <Grid<Item>
         config={TestGridConfig}
-        data={TestGridData as any[]}
+        data={TestGridData as Item[]}
       ></Grid>
   );
 };
