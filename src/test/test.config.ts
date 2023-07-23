@@ -4,6 +4,9 @@ export type Item = {
   name: string;
   age: number;
   city: string;
+  degree: string;
+  country: string;
+  speciality: string;
 }
 
 export const TestGridConfig: GridConfig<Item> = {
@@ -16,6 +19,15 @@ export const TestGridConfig: GridConfig<Item> = {
       label: 'Age',
     },{
       field: 'city',
+      label: 'City',
+    },{
+      field: 'country',
+      label: 'Country',
+    },{
+      field: 'degree',
+      label: 'Degree',
+    },{
+      field: 'speciality',
       label: 'City',
     },
   ]
